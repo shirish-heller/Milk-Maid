@@ -7,7 +7,7 @@
 @media (min-width: 768px) {
   #navSection {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
   }
 }
 
@@ -44,8 +44,7 @@
   and (-webkit-min-device-pixel-ratio: 2) {
     #carouselcontainer {
       width: 100%; 
-      max-height: 200px;  
-      background-color: red;
+      max-height: 200px;
     }
 }
 
@@ -103,50 +102,63 @@
 }
 
 #milk {
-  background-color: gainsboro;
-  height: 100px;
-  width: 100%;
-  text-align: center;
-  line-height: 6.5rem;
+  background-image: url("./Assets/milk.jpg");
 }
 
 #curd {
-  background-color: paleturquoise;
-  height: 100px;
-  width: 100%;
-  text-align: center;
-  line-height: 6.5rem;
+  background-image: url("./Assets/curd.jpg");
 }
 
 #butter {
-  background-color: burlywood;
-  height: 100px;
-  width: 100%;
-  text-align: center;
-  line-height: 6.5rem;
+  background-image: url("./Assets/butter.png");
 }
 
 #paneer {
-  background-color: yellowgreen;
-  height: 100px;
-  width: 100%;
-  text-align: center;
-  line-height: 6.5rem;
+  background-image: url("./Assets/paneer.jpg");
 }
 
 #masterPane div {
   margin-bottom: 10px;
+  border: 2px solid #ccc;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  line-height: 6.5rem;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #bbb;
 }
 
 #masterPane {
+  display: inline-block;
   flex-direction: column;
-  margin-left:0px;
+  margin-left:100px;
   margin-top: 20px;
   width: 200px;
+  float: left;
+}
+
+#masterPane div:hover {
+  cursor: pointer;
 }
 
 #main-content-area {
   justify-content: flex-start;
 }
 
+/* ---------------------------------DETAIL-PANE------------------------------ */
 
+#detailPane {
+  height: 450px;
+  width: 900px;
+  margin-left: 50px;
+  margin-top: 20px;
+  border: 1px solid #999;
+  display: inline-block;
+  float: left;
+}

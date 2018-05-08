@@ -1,7 +1,32 @@
-var myTemplate = require("../handlebars/template.hbs");
+var myTemplate = require("../handlebars/masterPanel.hbs");
+// $(document).ready(function () {
+//   $.ajax({
+//     xhr: function (){
+//       var xhr = new XMLHttpRequest();
+//       console.log('xhr', JSON.stringify(xhr));
+//       xhr.addEventListener('progress', function(e) {
+//         if(e.lengthComputable) {
+//           console.log('Percent uploaded', e.loaded/e.total *100);
+//         }
+//       });
+//     },
+//     type: "GET",
+//     url: "https://api.myjson.com/bins/lkta2",
+//     processData: false,
+//     contentType: false,
+//     success: function(res) {
+//       console.log(res);
+//       createHTML(res);
+//     },
+//     error: function(err) {
+//       console.log('error', err)
+//     }
+//   });
+// });
+
 
 var ourRequest = new XMLHttpRequest();
-ourRequest.open('GET', 'https://api.myjson.com/bins/hvfkn');
+ourRequest.open('GET', 'https://api.myjson.com/bins/lkta2');
 ourRequest.onload = function() {
   if (ourRequest.status >= 200 && ourRequest.status < 400) {
     var data = JSON.parse(ourRequest.responseText);
@@ -18,7 +43,7 @@ ourRequest.onerror = function() {
 
 ourRequest.send();
 
-function createHTML(petsData) {
-  var petsContainer = document.getElementById("pets-container");
-  petsContainer.innerHTML = myTemplate(petsData);
+function createHTML(productData) {
+  var productCategories = document.getElementById("masterPane");
+  productCategories.innerHTML = myTemplate(productData);
 }
