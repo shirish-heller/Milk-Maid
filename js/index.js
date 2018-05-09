@@ -1,4 +1,6 @@
-var myTemplate = require("../handlebars/masterPanel.hbs");
+var masterPanel = require("../handlebars/masterPanel.hbs");
+var loadingIndicator = require("../handlebars/loading-indicator.hbs");
+var busy = {busy: true};
 // $(document).ready(function () {
 //   $.ajax({
 //     xhr: function (){
@@ -31,7 +33,10 @@ ourRequest.onload = function() {
   if (ourRequest.status >= 200 && ourRequest.status < 400) {
     var data = JSON.parse(ourRequest.responseText);
     console.log(data);
-    createHTML(data);
+    setTimeout(function() {
+      console.log('now');
+      createHTML(data);
+    },2000);
   } else {
     console.log("We connected to the server, but it returned an error.");
   }
@@ -45,5 +50,9 @@ ourRequest.send();
 
 function createHTML(productData) {
   var productCategories = document.getElementById("masterPane");
-  productCategories.innerHTML = myTemplate(productData);
+  productCategories.innerHTML = masterPanel(productData);
+
+  var loadingIndTemp = document.getElementById("loading-indicator");
+  busy = {busy: false};
+  loadingIndTemp.innerHTML = loadingIndicator(busy);
 }
