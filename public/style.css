@@ -163,19 +163,17 @@
   float: left;
 }
 
+
+/* ---------------------------------LOADING-INDICATOR------------------------------ */
+
 .loading-indicator {
-  background: #111;
-  background: radial-gradient(#111, #000);
+  background: #333;
+  background: radial-gradient(#333, #000);
 }
 
 .loading-indicator-content {
   height: 45px;
 }
-
-/* .loading-indicator {
-  height: 60px;
-  background: radial-gradient(#111, #000);
-} */
 
 .blob {
   width: 2rem;
